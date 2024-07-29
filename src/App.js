@@ -22,20 +22,32 @@ function App() {
   };
 
   const [visitorCount, setVisitorCount] = useState(0);
+
   useEffect(() => {
-    const hasVisited = localStorage.getItem('hasVisited');
-    if (!hasVisited) {
-      // Increase the visitor count
-      let count = parseInt(localStorage.getItem('visitorCount') || '0', 10);
-      count += 1;
-      localStorage.setItem('visitorCount', count.toString());
-      localStorage.setItem('hasVisited', 'true');
-      setVisitorCount(count);
-    } else {
-      // Retrieve the existing visitor count
-      const count = parseInt(localStorage.getItem('visitorCount') || '0', 10);
-      setVisitorCount(count);
+    // Nama item dalam localStorage
+    const localStorageKey = 'visitorCount';
+
+    // Ambil data dari localStorage
+    let storedCount = localStorage.getItem(localStorageKey);
+
+    // Jika tidak ada data di localStorage, inisialisasi dengan 0
+    if (storedCount === null) {
+      storedCount = 0;
     }
+
+    // Konversi string ke integer
+    storedCount = parseInt(storedCount, 10);
+
+    // Cek apakah pengunjung baru
+    if (!localStorage.getItem('hasVisited')) {
+      // Jika pengunjung baru, tambahkan count
+      storedCount += 1;
+      localStorage.setItem(localStorageKey, storedCount);
+      localStorage.setItem('hasVisited', 'true');
+    }
+
+    // Update state dengan count terbaru
+    setVisitorCount(storedCount);
   }, []);
 
   return (
@@ -77,11 +89,11 @@ function App() {
 
         {/* Visitor Counter Card */}
         <section id="visitor-counter" className="w-full max-w-md mx-auto my-8 p-6 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 rounded-lg shadow-lg flex flex-col items-center">
-        <h2 className="text-2xl font-bold text-white mb-4">Visitor Count</h2>
-        <div className="bg-white p-4 rounded-lg shadow-md">
-          <p className="text-4xl font-semibold text-gray-800">{visitorCount}</p>
-        </div>
-      </section>
+          <h2 className="text-2xl font-bold text-white mb-4">Visitor Count</h2>
+          <div className="bg-white p-4 rounded-lg shadow-md">
+            <p className="text-4xl font-semibold text-gray-800">{visitorCount}</p>
+          </div>
+        </section>
 
 
       </main>
