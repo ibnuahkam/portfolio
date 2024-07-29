@@ -21,9 +21,9 @@ function App() {
     setIsOpen(!isOpen);
   };
 
-  useEffect(() => {
-    document.title = 'Ibnu - Portfolio'; // Ganti dengan title yang Anda inginkan
-  }, []);
+  // useEffect(() => {
+  //   document.title = 'Ibnu - Portfolio'; // Ganti dengan title yang Anda inginkan
+  // }, []);
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
