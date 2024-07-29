@@ -52,65 +52,66 @@ const Contact = () => {
     };
 
     return (
-        <div className="contact bg-gradient-to-r from-blue-50 via-gray-50 to-blue-100 min-h-screen p-10">
-        <ToastContainer />
-        <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
-            <h1 className="text-4xl font-extrabold mb-8 text-gray-800 text-center">Contact Me</h1>
-            <form className="space-y-6" onSubmit={sendEmail}>
-            <div>
-                <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="name">
-                Name
-                </label>
-                <input 
-                className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
-                id="name" 
-                type="text" 
-                placeholder="Your name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                />
+        <div className="relative bg-gradient-to-r from-blue-50 via-gray-50 to-blue-100 min-h-screen p-5">
+            <ToastContainer />
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-4xl w-full bg-white p-8 rounded-lg shadow-lg">
+                <h1 className="text-4xl font-extrabold mb-8 text-gray-800 text-center">Contact Me</h1>
+                <form className="space-y-6" onSubmit={sendEmail}>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="flex flex-col">
+                            <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="name">
+                                Name
+                            </label>
+                            <input 
+                                className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+                                id="name" 
+                                type="text" 
+                                placeholder="Your name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="flex flex-col">
+                            <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="email">
+                                Email
+                            </label>
+                            <input 
+                                className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+                                id="email" 
+                                type="email" 
+                                placeholder="Your email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className="flex flex-col">
+                        <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="message">
+                            Message
+                        </label>
+                        <textarea 
+                            className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+                            id="message" 
+                            placeholder="Your message"
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            required
+                        />
+                    </div>
+                    <div className="flex justify-center">
+                        <button 
+                            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+                            type="submit"
+                            disabled={isLoading}
+                        >
+                            {isLoading ? 'Sending...' : 'Send'}
+                        </button>
+                    </div>
+                </form>
             </div>
-            <div>
-                <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="email">
-                Email
-                </label>
-                <input 
-                className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
-                id="email" 
-                type="email" 
-                placeholder="Your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                />
-            </div>
-            <div>
-                <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="message">
-                Message
-                </label>
-                <textarea 
-                className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
-                id="message" 
-                placeholder="Your message"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-                />
-            </div>
-            <div className="flex justify-center">
-                <button 
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
-                type="submit"
-                disabled={isLoading}
-                >
-                {isLoading ? 'Sending...' : 'Send'}
-                </button>
-            </div>
-            </form>
         </div>
-        </div>
-
     );
 };
 
