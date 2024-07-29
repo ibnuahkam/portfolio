@@ -13,7 +13,8 @@ const Portfolio = () => {
         { src: '/bookm.jpeg', description: 'Book Meeting Room Mobile app Telkominfra' },
         { src: '/presensi.jpeg', description: 'Presensi Mobile app Telkominfra' },
         { src: '/tagging.jpeg', description: 'Asset Tagging Mobile app Telkominfra' },
-        { src: '/kepo.jpeg', description: 'Event Mobile app Telkominfra' }
+        { src: '/kepo.jpeg', description: 'Event Mobile app Telkominfra' },
+        { src: '/presensi_BE.jpeg', description: 'Presensi Backend using Laravel' }
     ];
 
     const openModal = (image) => {
