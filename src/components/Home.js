@@ -1,9 +1,37 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import profilePic from '../foto/profile.png'; // Ganti dengan path gambar profil Anda
+import swal from 'sweetalert';
 
 const Home = () => {
-    const whatsappNumber = '081281186734'; // Ganti dengan nomor WhatsApp Anda (tanpa tanda +)
+    const handleDownload = (e) => {
+        e.preventDefault();  // Mencegah aksi default dari tautan
+        const pdfHref = e.currentTarget.href;  // Simpan href ke variabel
+        swal({
+        title: "Do you want to open CV ?",
+        icon: "info",
+        buttons: {
+            cancel: "Open CV",
+            download: {
+            text: "Download CV",
+            value: "download",
+            },
+        },
+        }).then((value) => {
+        if (value === "download") {
+            // Download file
+            const link = document.createElement('a');
+            link.href = pdfHref;
+            link.setAttribute('download', '');
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+        } else {
+            // Buka di tab baru
+            window.open(pdfHref, "_blank");
+        }
+        });
+    };
 
     return (
         <div className="home min-h-screen flex items-center justify-center text-center bg-gradient-to-r from-blue-500 via-teal-500 to-cyan-500">
@@ -35,24 +63,25 @@ const Home = () => {
                     I am a programmer.
                 </motion.p>
                 <div className="mt-6">
-                    <motion.a 
-                        href="/path/to/cv.pdf" 
-                        className="bg-blue-500 text-white py-2 px-4 rounded-full mr-4 hover:bg-blue-700 transition duration-300"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        target="_blank" rel="noopener noreferrer"
-                    >
-                        Download CV
-                    </motion.a>
-                    <motion.a 
-                        href={`https://www.linkedin.com/in/ibnu-ahkam-subagio-870024131/`} 
-                        className="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-700 transition duration-300"
-                        whileHover={{ scale: 1.1 }}
-                        whileTap={{ scale: 0.9 }}
-                        target="_blank" rel="noopener noreferrer"
-                    >
-                        Hire Me
-                    </motion.a>
+                <motion.a 
+                    href="/ibnu-CV.pdf" 
+                    className="bg-blue-500 text-white py-2 px-4 rounded-full mr-4 hover:bg-blue-700 transition duration-300"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    onClick={handleDownload}
+                    rel="noopener noreferrer"
+                >
+                    Open CV
+                </motion.a>
+                <motion.a 
+                    href="https://www.linkedin.com/in/ibnu-ahkam-subagio-870024131/" 
+                    className="bg-green-500 text-white py-2 px-4 rounded-full hover:bg-green-700 transition duration-300"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.9 }}
+                    target="_blank" rel="noopener noreferrer"
+                >
+                    Hire Me
+                </motion.a>
                 </div>
             </div>
         </div>

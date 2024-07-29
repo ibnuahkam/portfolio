@@ -52,62 +52,65 @@ const Contact = () => {
     };
 
     return (
-        <div className="contact bg-white min-h-screen p-10">
-            <ToastContainer />
-            <h1 className="text-3xl font-bold mb-4 ml-20">Contact Me</h1>
-            <form className="max-w-lg mx-auto" onSubmit={sendEmail}>
-                <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-                        Name
-                    </label>
-                    <input 
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                        id="name" 
-                        type="text" 
-                        placeholder="Your name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                        Email
-                    </label>
-                    <input 
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                        id="email" 
-                        type="email" 
-                        placeholder="Your email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="mb-4">
-                    <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-                        Message
-                    </label>
-                    <textarea 
-                        className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" 
-                        id="message" 
-                        placeholder="Your message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                        required
-                    />
-                </div>
-                <div className="flex items-center justify-between">
-                    <button 
-                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
-                        type="submit"
-                        disabled={isLoading}
-                    >
-                        {isLoading ? 'Sending...' : 'Send'}
-                    </button>
-                </div>
+        <div className="contact bg-gradient-to-r from-blue-50 via-gray-50 to-blue-100 min-h-screen p-10">
+        <ToastContainer />
+        <div className="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+            <h1 className="text-4xl font-extrabold mb-8 text-gray-800 text-center">Contact Me</h1>
+            <form className="space-y-6" onSubmit={sendEmail}>
+            <div>
+                <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="name">
+                Name
+                </label>
+                <input 
+                className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+                id="name" 
+                type="text" 
+                placeholder="Your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+                />
+            </div>
+            <div>
+                <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="email">
+                Email
+                </label>
+                <input 
+                className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+                id="email" 
+                type="email" 
+                placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                />
+            </div>
+            <div>
+                <label className="block text-gray-700 text-sm font-medium mb-2" htmlFor="message">
+                Message
+                </label>
+                <textarea 
+                className="block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+                id="message" 
+                placeholder="Your message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+                />
+            </div>
+            <div className="flex justify-center">
+                <button 
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300 ease-in-out"
+                type="submit"
+                disabled={isLoading}
+                >
+                {isLoading ? 'Sending...' : 'Send'}
+                </button>
+            </div>
             </form>
         </div>
+        </div>
+
     );
 };
 
