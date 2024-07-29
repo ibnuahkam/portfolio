@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import { motion } from 'framer-motion';
 import profilePic from './foto/profile.png'; // Ganti dengan path gambar profil Anda
@@ -9,19 +9,17 @@ import 'react-toastify/dist/ReactToastify.css';
 import Contact from './components/Contact';
 import About from './components/About';
 import Projects from './components/Projects';
-import Navigation from './components/Navigation';
 import Home from './components/Home';
 import Footer from './components/Footer';
+import { Link as ScrollLink } from 'react-scroll'; // Import ScrollLink dari react-scroll
 
 function App() {
-  
   const [isOpen, setIsOpen] = useState(false);
+  const [visitorCount, setVisitorCount] = useState(0);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
-  const [visitorCount, setVisitorCount] = useState(0);
 
   useEffect(() => {
     // Nama item dalam localStorage
@@ -57,10 +55,46 @@ function App() {
         <h1 className="text-3xl font-bold">Portfolio</h1>
         <nav>
           <ul className="flex space-x-4">
-            <li><a href="#home" className="hover:underline text-white">Home</a></li>
-            <li><a href="#projects" className="hover:underline text-white">Projects</a></li>
-            <li><a href="#about" className="hover:underline text-white">About</a></li>
-            <li><a href="#contact" className="hover:underline text-white">Contact</a></li>
+            <li>
+              <ScrollLink
+                to="home"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:underline hover:text-teal-300 text-white transition duration-300 ease-in-out transform hover:scale-105"
+              >
+                Home
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="projects"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:underline hover:text-teal-300 text-white transition duration-300 ease-in-out transform hover:scale-105"
+              >
+                Projects
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="about"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:underline hover:text-teal-300 text-white transition duration-300 ease-in-out transform hover:scale-105"
+              >
+                About
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink
+                to="contact"
+                smooth={true}
+                duration={500}
+                className="cursor-pointer hover:underline hover:text-teal-300 text-white transition duration-300 ease-in-out transform hover:scale-105"
+              >
+                Contact
+              </ScrollLink>
+            </li>
           </ul>
         </nav>
       </header>
@@ -72,8 +106,8 @@ function App() {
           <Home />
         </section>
 
-      {/* Projects Section */}
-      <section id="projects" className="w-full px-4 my-8">
+        {/* Projects Section */}
+        <section id="projects" className="w-full px-4 my-8">
           <Projects />
         </section>
 
@@ -94,8 +128,6 @@ function App() {
             <p className="text-4xl font-semibold text-gray-800">{visitorCount}</p>
           </div>
         </section>
-
-
       </main>
 
       {/* Footer */}
