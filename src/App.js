@@ -123,14 +123,6 @@ function App() {
         <section id="contact" className="w-full max-w-4xl px-4 my-8 text-center">
           <Contact />
         </section>
-
-        {/* Visitor Counter Card */}
-        <section id="visitor-counter" className="w-full max-w-md mx-auto my-8 p-6 bg-gradient-to-r from-blue-200 via-blue-300 to-blue-400 rounded-lg shadow-lg flex flex-col items-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Visitor Count</h2>
-          <div className="bg-white p-4 rounded-lg shadow-md">
-            <p className="text-4xl font-semibold text-gray-800">{visitorCount}</p>
-          </div>
-        </section>
       </main>
 
       {/* Footer */}
