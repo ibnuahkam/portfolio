@@ -1,0 +1,22 @@
+/* src/components/BackToTop.css */
+.back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    z-index: 1000;
+}
+
+.back-to-top-button {
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 12%;
+    padding: 10px 15px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.back-to-top-button:hover {
+    background-color: #374151;
+}

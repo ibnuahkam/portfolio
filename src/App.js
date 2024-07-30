@@ -12,6 +12,8 @@ import Projects from './components/Projects';
 import Home from './components/Home';
 import Footer from './components/Footer';
 import { Link as ScrollLink } from 'react-scroll'; // Import ScrollLink dari react-scroll
+import BackToTop from './components/BackToTop';
+import './components/BackToTop.css';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,6 +52,7 @@ function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
+      <BackToTop />
       {/* Header */}
       <header className="w-full p-4 text-white flex justify-between items-center bg-gradient-to-r from-blue-500 via-teal-500 to-cyan-500 fixed top-0 z-50" style={{ backgroundColor: '#0EB8AC' }}>
         <h1 className="text-3xl font-bold">Portfolio</h1>
