@@ -10,11 +10,12 @@ const Portfolio = () => {
         { src: '/wfm.jpeg', description: 'Workforce Management Mobile app Telkominfra' },
         { src: '/asset.jpeg', description: 'Asset Management using Express JS + Mysql' },
         { src: '/enom.jpeg', description: 'WFM ENOM Mobile app Telkominfra' },
-        { src: '/bookm.jpeg', description: 'Book Meeting Room Mobile app Telkominfra' },
-        { src: '/presensi.jpeg', description: 'Presensi Mobile app Telkominfra' },
-        { src: '/tagging.jpeg', description: 'Asset Tagging Mobile app Telkominfra' },
+        { src: '/bookm.jpeg', description: 'Book Meeting Room Mobile app Telkominfra (React Native)' },
+        { src: '/presensi.jpeg', description: 'Presensi Mobile app Telkominfra (React Native)' },
+        { src: '/tagging.jpeg', description: 'Asset Tagging Mobile app Telkominfra (React Native)' },
         { src: '/kepo.jpeg', description: 'Event Mobile app Telkominfra' },
-        { src: '/presensi_BE.jpeg', description: 'Presensi Backend using Laravel' }
+        { src: '/presensi_BE.jpeg', description: 'Presensi Backend using Laravel' },
+        { src: '/posko.jpeg', description: 'Posko Siaga mobile apps (React Native)' }
     ];
 
     const openModal = (image) => {
