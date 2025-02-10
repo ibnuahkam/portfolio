@@ -24,8 +24,8 @@ const About = () => {
             <div>
             <h2 className="text-3xl font-semibold mb-4 text-gray-800">Skills</h2>
             <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li>Web Development: Have experience in building frontend and backend using various technologies such as React.js, Laravel, and Express.js.</li>
-                <li>Mobile Application Development: I have developed mobile applications using Ionic Framework and Flutter (Basic), providing a responsive and intuitive user experience.</li>
+                <li>Web Development: Have experience in building frontend and backend using various technologies such as React.js, Laravel,Adonis JS and Express.js.</li>
+                <li>Mobile Application Development: I have developed mobile applications using Ionic Framework, Flutter and React Native providing a responsive and intuitive user experience.</li>
                 <li>Database and Server: Using MySQL database.</li>
             </ul>
             </div>
