@@ -7,18 +7,7 @@ const Home = () => {
     const handleDownload = (e) => {
         e.preventDefault();  // Mencegah aksi default dari tautan
         const pdfHref = e.currentTarget.href;  // Simpan href ke variabel
-        swal({
-            title: "Do you want to open CV ?",
-            icon: "info",
-            buttons: {
-                cancel: "Close",
-                confirm: "OpenCV"
-            },
-        }).then((willOpen) => {
-            if (willOpen) {
-                window.open(pdfHref, "_blank");
-            }
-        });
+        window.open(pdfHref, "_blank");
     };
 
     return (
