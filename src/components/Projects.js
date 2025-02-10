@@ -15,7 +15,10 @@ const Portfolio = () => {
         { src: '/tagging.jpeg', description: 'Asset Tagging Mobile app Telkominfra (React Native)' },
         { src: '/kepo.jpeg', description: 'Event Mobile app Telkominfra' },
         { src: '/presensi_BE.jpeg', description: 'Presensi Backend using Laravel' },
-        { src: '/posko.jpeg', description: 'Posko Siaga mobile apps (React Native)' }
+        { src: '/posko.jpeg', description: 'Posko Siaga mobile apps (React Native)' },
+        { src: '/presensi_web.jpeg', description: 'Presensi Web Telkominfra (Adonis JS (Node JS) + MySql' },
+        { src: '/commerce.jpeg', description: 'E-commerce menggunakan React JS' },
+        { src: '/smc.jpeg', description: 'E-commerce PT Sinar Mitra Cendekia menggunakan React JS' }
     ];
 
     const openModal = (image) => {
