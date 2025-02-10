@@ -8,28 +8,16 @@ const Home = () => {
         e.preventDefault();  // Mencegah aksi default dari tautan
         const pdfHref = e.currentTarget.href;  // Simpan href ke variabel
         swal({
-        title: "Do you want to open CV ?",
-        icon: "info",
-        buttons: {
-            cancel: "Open CV",
-            download: {
-            text: "Download CV",
-            value: "download",
+            title: "Do you want to open CV ?",
+            icon: "info",
+            buttons: {
+                cancel: "Close",
+                confirm: "OpenCV"
             },
-        },
-        }).then((value) => {
-        if (value === "download") {
-            // Download file
-            const link = document.createElement('a');
-            link.href = pdfHref;
-            link.setAttribute('download', '');
-            document.body.appendChild(link);
-            link.click();
-            link.remove();
-        } else {
-            // Buka di tab baru
-            window.open(pdfHref, "_blank");
-        }
+        }).then((willOpen) => {
+            if (willOpen) {
+                window.open(pdfHref, "_blank");
+            }
         });
     };
 
@@ -59,7 +47,7 @@ const Home = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.5 }}
             >
-            I am a programmer.
+            Backend Developer | Frontend Developer | Mobile Developer
             </motion.p>
             <div className="mt-6">
             <motion.a
