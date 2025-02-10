@@ -18,7 +18,8 @@ const Portfolio = () => {
         { src: '/posko.jpeg', description: 'Posko Siaga mobile apps (React Native)' },
         { src: '/presensi_web.jpeg', description: 'Presensi Web Telkominfra (Adonis JS (Node JS) + MySql' },
         { src: '/commerce.jpeg', description: 'E-commerce menggunakan React JS' },
-        { src: '/smc.jpeg', description: 'E-commerce PT Sinar Mitra Cendekia menggunakan React JS' }
+        { src: '/smc.jpeg', description: 'E-commerce PT Sinar Mitra Cendekia menggunakan React JS' },
+        { src: '/be_presensi.jpeg', description: 'Backend Presensi menggunakan Adonis JS (Nodejs)' }
     ];
 
     const openModal = (image) => {
